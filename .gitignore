@@ -3,3 +3,4 @@ Include
 Lib
 Scripts
 session_key.py
+pyvenv.cfg
