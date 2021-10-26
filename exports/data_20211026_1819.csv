@@ -1,0 +1,18 @@
+TICKET,RESOLUTION,TICKET_TYPE,COMMENT,CREATED_ON,MON
+9991189,Charge Transfer - Retrigger charges,Incident,NA,2021/10/26 18:01:16,Oct2021
+9991173,Test2,Service Request,NA,2021/10/26 18:19:21,Oct2021
+9991169,Test1,Incident,NA,2021/10/26 18:19:20,Oct2021
+9727730,Pilot activity-City Configuration,Service Request,"Once Pilot is identified, these request will not flow into L2 bucket",2021/10/24 18:53:56,Oct2021
+9727337,Post deployment Issue,Incident,WQMS tasks are generated for vendor charges. Fix has been deployed and tasks are deleted for affected cases ,2021/10/24 18:48:07,Oct2021
+9725929,MRC update,Incident,Solution Approach and Estimation is in progress,2021/10/24 18:44:11,Oct2021
+9713895,Dummy Order update,Incident,"Billing, PM and OET team assured to avoid request for backend updates.",2021/10/24 18:40:30,Oct2021
+9707261,SAP PO issue ,Incident,PB-2400 - In Inhouse team queue,2021/10/24 18:37:27,Oct2021
+9702850,LM and LLB Speed update,Service Request,NA,2021/10/25 18:03:11,Oct2021
+9700377,Dummy Order update,Service Request,"Billing, PM and OET team assured to avoid request for backend updates.",2021/10/24 18:57:08,Oct2021
+9700302,User Request,Incident,User Request,2021/10/24 18:56:29,Oct2021
+9698416,SFDC ID update,Incident,Will check the impact ,2021/10/24 18:32:26,Oct2021
+9696058,Application Latency,Service Request,Application Latency,2021/10/25 18:02:36,Oct2021
+9695323,Data extract ,Incident,NA,2021/10/24 18:55:25,Oct2021
+9686631,Pilot activity-Owner/Service Configuration,Service Request,"Once Pilot is identified, these request will not flow into L2 bucket",2021/09/10 14:57:27,Sep2021
+9676439,REPC-Cramer Job failure,Incident,NA,2021/09/24 14:57:27,Sep2021
+9623539,Cities are configured.   ,Incident,Cities are configured.   ,2021/10/25 17:55:20,Oct2021
