@@ -5,6 +5,8 @@ import time, datetime
 from flask.wrappers import Response
 from csvOps import getAll, getMonthData
 from werkzeug.exceptions import abort
+import pandas as pd
+import numpy as np
 
 
 today = datetime.date.today()
@@ -16,7 +18,7 @@ app = Flask(__name__)
 app.config.from_pyfile('session_key.py')
 
 def database_connection():
-    conn = sqlite3.connect('database.db', timeout=2)
+    conn = sqlite3.connect('database.db', timeout=1)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -31,6 +33,17 @@ def check(num):
     conn.close()
 
     return value
+
+def getCount():
+    m = str(time.strftime("%b%Y", time.gmtime()))
+
+    conn = sqlite3.connect('database.db', isolation_level=None, detect_types=sqlite3.PARSE_COLNAMES, timeout=1)
+    data = pd.read_sql_query('select TICKET_TYPE, MON from tickets', conn)
+    conn.close()
+    incident = np.sum((data.TICKET_TYPE == 'Incident') & (data.MON == m))
+    req = np.sum((data.TICKET_TYPE == 'Service Request') & (data.MON == m))
+    return {'incident':incident, 'req':req}
+
 
 @app.route('/csv_lastMonth')
 def getCSVmonth():
@@ -95,8 +108,10 @@ def index():
 
                 return redirect(url_for('index'))
 
+        x = getCount()
+
         close_db_connection()
-        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], lastMonth=lastMonth)
+        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], count=x, lastMonth=lastMonth)
 
     except OperationalError or IntegrityError as e:
         close_db_connection()

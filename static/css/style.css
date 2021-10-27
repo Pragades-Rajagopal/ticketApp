@@ -10,11 +10,11 @@
 
 .row {
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -4px;
-    margin-left: 400px;
+    margin-left: 370px;
 }
 
 html, body {
@@ -160,4 +160,5 @@ html, body {
     margin-top: -9px !important;
     margin-bottom: 8px !important;
 }
+
 
