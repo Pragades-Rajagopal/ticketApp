@@ -1,6 +1,7 @@
 drop table if exists tickets;
 
 create table tickets (
+    APP_NM text not null,
     TICKET integer primary key,
     RESOLUTION text not null,
     TICKET_TYPE text not null,

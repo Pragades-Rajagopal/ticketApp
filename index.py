@@ -45,7 +45,7 @@ def getCount():
     return {'incident':incident, 'req':req}
 
 
-@app.route('/csv_lastMonth')
+@app.route('/ticket-tool/csv_lastMonth')
 def getCSVmonth():
 
     cur_date = str(time.strftime("%Y%m%d_%H%M", time.gmtime()))
@@ -58,7 +58,7 @@ def getCSVmonth():
 
 
 
-@app.route('/getCSVfile')
+@app.route('/ticket-tool/getCSVfile')
 def getCSV():
 
     cur_date = str(time.strftime("%Y%m%d_%H%M", time.gmtime()))
@@ -70,7 +70,7 @@ def getCSV():
     as_attachment=True)
 
 
-@app.route('/', methods=('GET', 'POST'))
+@app.route('/ticket-tool', methods=('GET', 'POST'))
 def index():
 
     close_db_connection()
@@ -82,6 +82,7 @@ def index():
             descr = request.form['descr']
             ttype = request.form.get('ticket_type')
             detail = request.form['detail']
+            app_name = request.form.get('app_name')
 
             created_on = str(time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime()))
             mon = str(time.strftime("%b%Y", time.gmtime()))
@@ -98,11 +99,11 @@ def index():
                 print('TT already exists')
                 abort (Response('''<H1>Ticket already exists</H1>
                 <br>
-                <a href="/">GO HOME</a>'''))
+                <a href="/ticket-tool">GO HOME</a>'''))
 
             else:
                 conn = database_connection()
-                conn.execute('insert into tickets (TICKET, RESOLUTION, TICKET_TYPE, COMMENT, CREATED_ON, MON) values (?,?,?,?,?,?)', (num, descr, ttype, detail, created_on, mon))
+                conn.execute('insert into tickets (APP_NM, TICKET, RESOLUTION, TICKET_TYPE, COMMENT, CREATED_ON, MON) values (?,?,?,?,?,?,?)', (app_name ,num, descr, ttype, detail, created_on, mon))
                 conn.commit()
                 conn.close()
 
@@ -110,8 +111,10 @@ def index():
 
         x = getCount()
 
+        app_nm = [{'name':'REPC'}, {'name':'TIGER'}, {'name':'RERT'}, {'name':'MSPS'}, {'name':'REACT'}]
+
         close_db_connection()
-        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], count=x, lastMonth=lastMonth)
+        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], app_nm=app_nm, count=x, lastMonth=lastMonth)
 
     except OperationalError or IntegrityError as e:
         close_db_connection()
@@ -126,6 +129,7 @@ def index():
     #             <a href="/">GO HOME</a>'''))
 
 
-# app.run(port=5000, host='localhost')
+
+app.run(port=5000, host='localhost', debug=True)
 
 
