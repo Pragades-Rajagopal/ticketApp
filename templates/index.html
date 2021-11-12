@@ -27,10 +27,11 @@
           <form class="form-inline my-2 my-lg-0">
             <a class="nav-link">Service Request: {{ count.req }}</a>
         </form >
-        <form  method="get">
-          <input type="search" placeholder="Search" name="q">
-          <button type="submit">Search</button>
+        <form  id="search" action = "{{url_for('search')}}" method="POST">
+            <input type="number"  name="tt_number" placeholder="Enter Ticket Number">
+            <input type="submit" value="Search">
         </form>
+      
         
       </nav>
     

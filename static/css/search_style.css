@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+
+.heads{
+    background-color: #ddd;
+    color: black;
+    position: relative;
+    height: 60px;
+}
+
+
+.padding-table-columns td
+{
+    padding:0 90px 0 0; /* Only right padding*/
+    position: relative;
+    bottom:10px;
+}
+.padding-table-columns h2{
+    text-align: center;
+    
+}
+
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    height:10px;
+    top:10px;
+    left:160px;
+}
+  
+  a:hover, a:active {
+    background-color: red;
+  }
+
+
+.heads h
+*, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.uploadbox {
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 0 auto;
+  }
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -4px;
+    margin-left: 400px;
+}
+
+html, body {
+    height: 100%;
+    background-color: rgb(128, 202, 137);
+    overflow: hidden;
+}
+
+
+.form-holder {
+      display:flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 10vh;
+      position: relative;
+      top:10px;
+      height:300px;
+      right:50px;
+}
+
+.form-holder .form-content {
+    position: relative;
+    top:150px;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 60px;
+    
+}
+
+.form-content .form-items {
+    border: 3px solid #fff;
+    padding: 40px;
+    display: inline-block;
+    width: 120%;
+    min-width: 540px;
+    height: 550px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.form-content h3 {
+    color: cornsilk;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-content h3.form-title {
+    margin-bottom: 40px;
+}
+
+.form-content p {
+    color: #fff;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+
+
+.form-content input[type=text],  .form-content select {
+    width: 85%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+
+} 
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 1px;
+    padding-left: 50px;
+}
+
+
+.btn-primary{
+    background-color: lightgreen;
+    outline: darkslateblue;
+    height: 1cm;
+    width: 3cm;
+    position: relative;
+    box-shadow: none;
+    text-align: center;
+    font-size: large;
+    border-radius: 6px;
+    justify-content: center;
+    color: black;
+    margin-left: 50px;
+   
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background-color: darkslateblue;
+    outline: none !important;
+    border: none !important;
+     box-shadow: none;
+}
+
+.form-content textarea {
+    position: static !important;
+    width: 85%;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    outline: none;
+    resize: none;
+    height: 120px;
+    -webkit-transition: none;
+    transition: none;
+    margin-bottom: 14px;
+}
+
+.form-content text:hover, .form-content textarea:focus {
+    border: 0;
+    background-color: #ebeff8;
+    color: #8D8D8D;
+}
+
+.mv-up{
+    margin-top: -9px !important;
+    margin-bottom: 8px !important;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  /* background-color: #04AA6D; */
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+}

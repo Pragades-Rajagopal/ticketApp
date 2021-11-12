@@ -129,6 +129,30 @@ def index():
     #             <a href="/">GO HOME</a>'''))
 
 
+@app.route('/ticket-tool/search', methods = ['POST', 'GET'])
+def search():
+    
+    try:
+        
+        text = request.form['tt_number']
+        conn = database_connection()
+        cur = conn.cursor()
+        post = cur.execute("SELECT * from tickets where ticket=?",(text,)).fetchone()
+        conn.commit()
+        conn.close()
+
+        if post is None:
+            return redirect(url_for('index'))
+
+        return render_template('search.html', post=post)
+
+    except TypeError as e:
+        close_db_connection()
+        abort (Response('''<H1>Ticket does not exist!!</H1>
+        <br>
+        <a href="/ticket-tool">GO HOME</a>'''))
+
+
 
 app.run(port=5000, host='localhost', debug=True)
 

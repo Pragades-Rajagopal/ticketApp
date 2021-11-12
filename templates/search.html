@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link defer rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/search_style.css')}}">
+    <title>Application Ticket Tool</title>
+    <link rel="icon" href="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-ticket-interface-kiranshastry-lineal-color-kiranshastry-1.png">
+    <!-- <link rel="shortcut icon" type="image/png" href="/favicon/ticket64.png"/> -->
+</head>
+<body>
+    
+
+    </div>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        
+                        <h3>Ticket Details</h3>                       
+                        <form method="POST">
+
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="ticket_number" value="{{ post['TICKET'] }}" readonly>
+                            </div>
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" name="descr" value="{{ post['RESOLUTION'] }}" readonly>
+                             </div>
+
+                           <div class="col-md-12">
+                               <input class="form-control" type="text" name="ttype" value="{{ post['TICKET_TYPE'] }}" readonly>
+                           </div>
+                           <br>
+                           <div class="col-md-12">
+                               <textarea name="detail" type="text" class="form-control" readonly>{{ post['COMMENT'] }}</textarea>
+                           </div>
+                           <div class="col-md-12">
+                               
+                            <input class="form-control" type="text" name="app_name" value="{{ post['APP_NM'] }}" readonly>
+                        </div>
+                           <div class="col-md-12">
+                               
+                                <input class="form-control" type="text" name="created" value="{{ post['CREATED_ON'] }}" readonly>
+                            </div>
+                           
+                            <div class="form-button mt-3">
+                                <a href="{{ url_for('index') }}">Home</a>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
