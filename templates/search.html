@@ -37,8 +37,10 @@
                            <div class="col-md-12">
                                <textarea name="detail" type="text" class="form-control" readonly>{{ post['COMMENT'] }}</textarea>
                            </div>
-                           <div class="col-md-12">
-                               
+                           <div class="col-md-12">   
+                            <input class="form-control" type="text" name="app_name" value="{{ post['RESOLVED_BY'] }}" readonly>
+                        </div>
+                           <div class="col-md-12">   
                             <input class="form-control" type="text" name="app_name" value="{{ post['APP_NM'] }}" readonly>
                         </div>
                            <div class="col-md-12">

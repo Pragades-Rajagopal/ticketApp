@@ -83,6 +83,7 @@ def index():
             ttype = request.form.get('ticket_type')
             detail = request.form['detail']
             app_name = request.form.get('app_name')
+            resolved_by = request.form.get('resolved_user')
 
             created_on = str(time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime()))
             mon = str(time.strftime("%b%Y", time.gmtime()))
@@ -103,7 +104,7 @@ def index():
 
             else:
                 conn = database_connection()
-                conn.execute('insert into tickets (APP_NM, TICKET, RESOLUTION, TICKET_TYPE, COMMENT, CREATED_ON, MON) values (?,?,?,?,?,?,?)', (app_name ,num, descr, ttype, detail, created_on, mon))
+                conn.execute('insert into tickets (APP_NM, TICKET, RESOLUTION, TICKET_TYPE, COMMENT, CREATED_ON, MON, RESOLVED_BY) values (?,?,?,?,?,?,?, ?)', (app_name ,num, descr, ttype, detail, created_on, mon, resolved_by))
                 conn.commit()
                 conn.close()
 
@@ -112,9 +113,10 @@ def index():
         x = getCount()
 
         app_nm = [{'name':'REPC'}, {'name':'TIGER'}, {'name':'RERT'}, {'name':'MSPS'}, {'name':'REACT'}]
+        users = [{'user':'Bharat'}, {'user':'Harish'}, {'user':'Pragadeswar'}, {'user':'Saibhargavi'}, {'user':'Sucharitha'}, {'user':'Surandranath'}]
 
         close_db_connection()
-        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], app_nm=app_nm, count=x, lastMonth=lastMonth)
+        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], app_nm=app_nm, count=x, lastMonth=lastMonth, users=users)
 
     except OperationalError or IntegrityError as e:
         close_db_connection()

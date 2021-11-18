@@ -40,7 +40,7 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>Please fill below details</h3>
+                        <h3>Application Ticket Tracker Tool</h3>
                         <div class="flasher">
                             {% for message in get_flashed_messages() %}
                                 <div class="alert alert-danger">{{ message }}</div>
@@ -50,10 +50,10 @@
                         <form method="POST">
     
                             <div class="col-md-12">
-                               <input class="form-control" type="text" name="num" placeholder="Ticket Number (should be number)" value="{{ request.form['num'] }}">
+                               <input class="form-control" type="text" name="num" placeholder="Ticket Number (should be number) *" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="{{ request.form['num'] }}">
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="descr" placeholder="Ticket Description" value="{{ request.form['descr'] }}">
+                                <input class="form-control" type="text" name="descr" placeholder="Ticket Description *" value="{{ request.form['descr'] }}">
                              </div>
     
                            <div class="col-md-12">
@@ -66,19 +66,27 @@
                            <br>
                            <div class="col-md-12">
                                 <!-- <input class="form-control" type="text" name="detail" placeholder="Detailed description" value="{{request.form['detail'] }}"> -->
-                                <textarea name="detail" type="text" class="form-control" placeholder="Detailed description" value="{{ request.form['detail'] }}"></textarea>
+                                <textarea name="detail" type="text" class="form-control" placeholder="Detailed description *" value="{{ request.form['detail'] }}"></textarea>
                            </div>
+                           <div class="col-md-12">
+                            <select class="form-select mt-3" name="resolved_user">
+                                  {% for i in users %}
+                                    <option value="{{ i.user }}">{{ i.user }}</option>
+                                  {% endfor %}
+                           </select>
+                            </div>
                            <div class="col-md-12">
                             <select class="form-select mt-3" name="app_name">
                                   {% for i in app_nm %}
                                     <option value="{{ i.name }}">{{ i.name }}</option>
                                   {% endfor %}
                            </select>
-                       </div>
+                            </div>
 
                             <div class="form-button mt-3">
                                 <button id="submit" type="submit" class="btn btn-primary">SUBMIT</button>
                             </div>
+                            <label>* fields are mandatory</label>
                         </form>
                     </div>
                 </div>

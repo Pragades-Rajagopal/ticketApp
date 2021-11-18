@@ -29,7 +29,7 @@ a:link, a:visited {
     text-decoration: none;
     position: relative;
     height:10px;
-    top:10px;
+    top:30px;
     left:160px;
 }
   
@@ -79,8 +79,9 @@ html, body {
       min-height: 10vh;
       position: relative;
       top:10px;
-      height:300px;
-      right:50px;
+      height:500px;
+      right:100px;
+      left: 100px
 }
 
 .form-holder .form-content {
