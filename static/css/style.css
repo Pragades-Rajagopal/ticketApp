@@ -208,6 +208,11 @@ ul {
     margin-right: 16px;
     font-size: 17px;
   }
+
+  .label-static {
+      background-color: rgb(36, 41, 46);
+      pointer-events: none;
+  }
   
   .label-mand {
       color: red;
