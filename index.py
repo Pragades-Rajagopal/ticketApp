@@ -7,6 +7,7 @@ from csvOps import getAll, getMonthData
 from werkzeug.exceptions import abort
 import pandas as pd
 import numpy as np
+import csv
 
 
 today = datetime.date.today()
@@ -115,8 +116,13 @@ def index():
         app_nm = [{'name':'REPC'}, {'name':'TIGER'}, {'name':'RERT'}, {'name':'MSPS'}, {'name':'REACT'}]
         users = [{'user':'Bharat'}, {'user':'Harish'}, {'user':'Pragadeswar'}, {'user':'Saibhargavi'}, {'user':'Sucharitha'}, {'user':'Surandranath'}]
 
+        a = []
+        with open('./category/ticket_category.csv', 'r') as value:
+            a = [{k: v for k, v in row.items()} 
+                for row in csv.DictReader(value, skipinitialspace=True)]
+
         close_db_connection()
-        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], app_nm=app_nm, count=x, lastMonth=lastMonth, users=users)
+        return render_template('index.html', data=[{'name':'Incident'}, {'name':'Service Request'}], app_nm=app_nm, count=x, lastMonth=lastMonth, users=users, category=a)
 
     except OperationalError or IntegrityError as e:
         close_db_connection()

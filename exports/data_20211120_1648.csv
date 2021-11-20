@@ -1,0 +1,11 @@
+APP_NM,TICKET,RESOLUTION,TICKET_TYPE,COMMENT,CREATED_ON,MON,RESOLVED_BY
+REPC,10033924,Backend Update - Toll-Free number removal/Order Elimination for Optimus Orders,Service Request,NA,2021/11/20 16:42:05,Nov2021,Surandranath
+REPC,10033923,check,Service Request,NA,2021/11/20 16:35:40,Nov2021,Bharat
+REPC,10033922,Old charge id update,Incident,NA,2021/11/20 16:11:52,Nov2021,Sucharitha
+REPC,10033921,Incident,Incident,NA,2021/11/20 15:21:47,Nov2021,Bharat
+REPC,10033920,Old charge id update,Incident,NA,2021/11/18 08:16:41,Nov2021,Bharat
+REPC,10033919,Old charge id update,Incident,NA,2021/11/18 07:51:38,Nov2021,Pragadeswar
+REPC,10033918,Pilot activity-Owner/Service Configuration,Service Request,"Once Pilot is identified, these request will not flow into L2 bucket",2021/11/02 14:57:30,Nov2021,Bharat
+TIGER,10033917,REPC-Cramer Job failure,Incident,NA,2021/10/01 14:57:27,Oct2021,Sucharitha
+REPC,10012016,Application Latency,Incident,NA,2021/11/20 13:45:12,Nov2021,Pragadeswar
+TIGER,10000126,Circuit Fetching - PO details Updated for Cramer fetched circuit,Service Request,NA,2021/11/20 16:47:45,Nov2021,Harish

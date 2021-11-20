@@ -26,8 +26,10 @@
                             <div class="col-md-12">
                                <input class="form-control" type="text" name="ticket_number" value="{{ post['TICKET'] }}" readonly>
                             </div>
+                            <br>
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="descr" value="{{ post['RESOLUTION'] }}" readonly>
+                                <!-- <input class="form-control" type="text" name="descr" value="{{ post['RESOLUTION'] }}" readonly> -->
+                                <textarea name="detail" type="text" class="form-control" readonly>{{ post['RESOLUTION'] }}</textarea>
                              </div>
 
                            <div class="col-md-12">
@@ -49,7 +51,7 @@
                             </div>
                            
                             <div class="form-button mt-3">
-                                <a href="{{ url_for('index') }}">Home</a>
+                                <a class="btn btn-primary" href="{{ url_for('index') }}">Home</a>
                                 
                             </div>
                         </form>

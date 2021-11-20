@@ -1,5 +1,0 @@
-APP_NM,TICKET,RESOLUTION,TICKET_TYPE,COMMENT,CREATED_ON,MON
-REPC,10012016,Old charge id update,Incident,NA,2021/11/08 17:37:51,Nov2021
-TIGER,10008714,Bill Start Date Update for Data Orders,Service Request,NA,2021/11/08 17:39:12,Nov2021
-REPC,9686631,Pilot activity-Owner/Service Configuration,Service Request,"Once Pilot is identified, these request will not flow into L2 bucket",2021/11/08 14:57:27,Nov2021
-TIGER,9676439,REPC-Cramer Job failure,Incident,NA,2021/10/05 14:57:27,Oct2021
