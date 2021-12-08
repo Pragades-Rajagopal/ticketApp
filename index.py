@@ -163,5 +163,6 @@ def search():
 
 
 # app.run(port=5000, host='localhost', debug=True)
+app.run(debug=True)
 
 
