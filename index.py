@@ -98,7 +98,7 @@ def index():
             elif not detail:
                 flash('Detailed description is required. If not, NA')
             elif value is not None:
-                print('TT already exists')
+                # print('TT already exists')
                 abort (Response('''<H1>Ticket already exists</H1>
                 <br>
                 <a href="/ticket-tool">GO HOME</a>'''))
