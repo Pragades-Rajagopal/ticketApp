@@ -13,9 +13,9 @@
 <body>
 
       <ul>
-        <li><a href="/">Application Ticket Tool</a></li>
-        <li><a href="/csv_lastMonth">Export for {{ lastMonth }}</a></li>
-        <li><a href="/getCSVfile">Export All</a></li>
+        <li><a href="/ticket-tool">Application Ticket Tool</a></li>
+        <li><a href="/ticket-tool/csv_lastMonth">Export for {{ lastMonth }}</a></li>
+        <li><a href="/ticket-tool/getCSVfile">Export All</a></li>
         <li><a class="label-static">Incident: {{ count.incident }}</a></li>
         <li><a class="label-static">Service Request: {{ count.req }}</a></li>
         <form  id="search" action = "{{url_for('search')}}" method="POST">

@@ -46,7 +46,7 @@ def getCount():
     return {'incident':incident, 'req':req}
 
 
-@app.route('/csv_lastMonth')
+@app.route('/ticket-tool/csv_lastMonth')
 def getCSVmonth():
 
     cur_date = str(time.strftime("%Y%m%d_%H%M", time.gmtime()))
@@ -59,7 +59,7 @@ def getCSVmonth():
 
 
 
-@app.route('/getCSVfile')
+@app.route('/ticket-tool/getCSVfile')
 def getCSV():
 
     cur_date = str(time.strftime("%Y%m%d_%H%M", time.gmtime()))
@@ -71,7 +71,7 @@ def getCSV():
     as_attachment=True)
 
 
-@app.route('/', methods=('GET', 'POST'))
+@app.route('/ticket-tool', methods=('GET', 'POST'))
 def index():
 
     close_db_connection()
@@ -101,7 +101,7 @@ def index():
                 # print('TT already exists')
                 abort (Response('''<H1>Ticket already exists</H1>
                 <br>
-                <a href="/">GO HOME</a>'''))
+                <a href="/ticket-tool">GO HOME</a>'''))
 
             else:
                 conn = database_connection()
@@ -128,7 +128,7 @@ def index():
         close_db_connection()
         abort (Response('''<H1>Ticket Number should be a number or Something went wrong!</H1>
                 <br>
-                <a href="/">GO HOME</a>'''))
+                <a href="/ticket-tool">GO HOME</a>'''))
 
     # except IntegrityError as e:
     #     close_db_connection()
@@ -137,7 +137,7 @@ def index():
     #             <a href="/">GO HOME</a>'''))
 
 
-@app.route('/search', methods = ['POST', 'GET'])
+@app.route('/ticket-tool/search', methods = ['POST', 'GET'])
 def search():
     
     try:
@@ -158,7 +158,7 @@ def search():
         close_db_connection()
         abort (Response('''<H1>Ticket does not exist!!</H1>
         <br>
-        <a href="/">GO HOME</a>'''))
+        <a href="/ticket-tool">GO HOME</a>'''))
 
 
 
